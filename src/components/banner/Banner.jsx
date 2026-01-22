@@ -2,14 +2,15 @@ import { FaCheckCircle } from "react-icons/fa"
 import { IoWarning } from "react-icons/io5";
 import { RxCrossCircled } from "react-icons/rx";
 import { FaCircleInfo } from "react-icons/fa6";
-import {createContext} from 'react'
+import { createContext } from 'react'
+import { createPortal } from 'react-dom'
 
 export const BannerContext = createContext()
 
-export default function Banner({children, variant="neutral"}){
+export default function Banner({ children, variant = "neutral", role = "", position ="", addToToasts}) {
 
     let bannerIcon
-    switch(variant){
+    switch (variant) {
         case "success":
             bannerIcon = <FaCheckCircle />
             break
@@ -26,16 +27,32 @@ export default function Banner({children, variant="neutral"}){
             bannerIcon = <FaCircleInfo />
     }
 
-    return (
-        <BannerContext value={variant}>   
-            <div className={`banner ${variant}`}>
-                <div className={`banner-icon ${variant}`}>
-                    {bannerIcon}
-                </div>
-                <div className='banner-content'>
-                    {children}
-                </div>
+    const output = (
+        <div
+            className={`banner ${variant} ${role} ${position}`}
+            ref= { 
+                role === 'toast'
+                ? (node) => {return addToToasts(node, variant)}
+                : null
+            }
+        >
+            <div className={`banner-icon ${variant}`}>
+                {bannerIcon}
             </div>
+            <div className='banner-content'>
+                {children}
+            </div>
+        </div>
+    )
+
+
+    return (
+        <BannerContext value={variant}>
+            {
+                role === 'toast'
+                    ? createPortal(output, document.body)
+                    : output
+            }
         </BannerContext>
     )
 }
