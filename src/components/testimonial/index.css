@@ -9,6 +9,7 @@
     display: flex;
     gap: 3em;
     border-radius: 10px;
+    font-family: 'Inter', 'sans-serif'; 
 }
 
 .testimonial-img-img-container {
@@ -71,6 +72,7 @@
     overflow: hidden;
     position: relative;
     font-weight: 600;
+    font-family: 'Inter', 'sans-serif'; 
 }
 
 .dot-bg {

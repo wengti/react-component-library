@@ -11,6 +11,7 @@
     gap: 1em;
     position: relative;
     transition: opacity 1s;
+    font-family: 'Inter', 'sans-serif'; 
 
     &.bold.blue {
         background-color: #1E40AF;

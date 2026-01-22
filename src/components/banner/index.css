@@ -8,6 +8,7 @@
     padding: 1em;
     align-items: flex-start;
     background-color: gray;
+    font-family: 'Inter', 'sans-serif'; 
 
     &.success {
         background-color: #ECFDF5;
@@ -138,6 +139,7 @@
     font-weight: bold;
     box-shadow: 1px 1px 10px 1px gray;
     width: 200px;
+    font-family: 'Inter', 'sans-serif'; 
 
     &:hover {
         cursor: pointer;
