@@ -1,0 +1,56 @@
+/* ---- */
+/* Card */
+/* ---- */
+.card {
+    background-color: #F9FAFB;
+    width: 90%;
+    max-width: 380px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    border-radius: 8px;
+    padding: 1.3em;
+    gap: 1em;
+}
+
+
+.card-icon {
+    height: 48px;
+    width: 48px;
+    position: absolute;
+    top: -24px;
+    background-color: #3F75FE;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 6px;
+}
+
+.card-icon img {
+    width: 50%;
+    height: 50%;
+    object-fit: fill;
+}
+
+.card-title {
+    font-weight: 600;
+}
+
+.card-text {
+    color: #6B7280;
+    font-size: 0.9rem;
+}
+
+.card:hover {
+    cursor: pointer;
+    box-shadow: 1px 0 5px 0.2px gray, 0 2px 5px 0.2px gray,
+        -1px 0 5px 0.2px gray, 0 -2px 5px 0.2px gray;
+}
+
+.card:hover .card-icon {
+    transform: scale(1.05);
+}

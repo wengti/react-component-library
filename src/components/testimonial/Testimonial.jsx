@@ -1,5 +1,7 @@
 import TestimonialImg from './TestimonialImg'
 import TestimonialText from './TestimonialText'
+import './index.css'
+
 
 export default function Testimonial(props) {
     return (

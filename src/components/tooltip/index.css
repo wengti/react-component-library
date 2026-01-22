@@ -1,0 +1,212 @@
+
+/* Tooltip */
+
+.tooltip {
+    display: flex;
+    padding: 1em 1.5em;
+    background-color: #262626;
+    border-radius: 8px;
+    width: 30%;
+    min-width: 420px;
+    gap: 1em;
+    position: relative;
+    transition: opacity 1s;
+
+    &.bold.blue {
+        background-color: #1E40AF;
+    }
+
+    &.bold.pink {
+        background-color: #A9229B;
+    }
+
+    &.bold.green {
+        background-color: #47AA5D;
+    }
+
+    &.light {
+        background-color: #FFFFFF;
+        box-shadow: 0px 1px 10px 1px gray;
+    }
+
+    &.light.blue {
+        background-color: #E0E7FF;
+    }
+
+    &.light.pink {
+        background-color: #FFF3FC;
+    }
+
+    &.light.green {
+        background-color: #E7FFF3;
+    }
+}
+
+.tooltip-triangle {
+    position: absolute;
+    bottom: -20px;
+    left: 10%;
+    border-top: 20px solid #262626;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+
+    &.bold.blue {
+        border-top: 20px solid #1E40AF;
+    }
+
+    &.bold.pink {
+        border-top: 20px solid #A9229B;
+    }
+
+    &.bold.green {
+        border-top: 20px solid #47AA5D;
+    }
+
+    &.light {
+        border-top: 20px solid #ffffff;
+        filter: drop-shadow(0 10px 6px gray);
+    }
+
+    &.light.blue {
+        border-top: 20px solid #E0E7FF;
+    }
+
+    &.light.pink {
+        border-top: 20px solid #FFF3FC;
+    }
+
+    &.light.green {
+        border-top: 20px solid #E7FFF3;
+    }
+}
+
+.tooltip-x {
+    position: absolute;
+    font-weight: 900;
+    font-size: 1.2rem;
+    color: white;
+    top: 1rem;
+    right: 2%;
+
+    &.light {
+        color: #6B7280;
+    }
+
+    &.light.blue {
+        color: #1C51B9;
+    }
+
+    &.light.pink {
+        color: #C7369E;
+    }
+
+    &.light.green {
+        color: #3C8C4E;
+    }
+
+    :hover {
+        cursor: pointer;
+    }
+}
+
+.tooltip-icon-container {
+    width: 30px;
+    color: #C7C7C7;
+
+    &.bold.blue {
+        color: #7EA6F2;
+    }
+
+    &.bold.pink {
+        color: #F462E6;
+    }
+
+    &.bold.green {
+        color: #C1FFCF;
+    }
+
+    &.light {
+        color: #6B7280;
+    }
+
+    &.light.blue {
+        color: #1C51B9;
+    }
+
+    &.light.pink {
+        color: #C7369E;
+    }
+
+    &.light.green {
+        color: #41A557;
+    }
+}
+
+.tooltip-icon {
+    font-size: 1.5rem;
+    width: 35px;
+}
+
+.tooltip-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+}
+
+.tooltip-title {
+    color: white;
+    font-size: 1.15rem;
+
+    &.light {
+        color: #111827;
+    }
+
+    &.light.blue {
+        color: #1E40AF;
+    }
+
+    &.light.pink {
+        color: #A9229B;
+    }
+
+    &.light.green {
+        color: #137A2A;
+    }
+}
+
+.tooltip-text {
+    color: #C7C7C7;
+    font-size: 1rem;
+
+    &.bold.blue {
+        color: #E8EDFF;
+    }
+
+    &.bold.pink {
+        color: #FFE9FD
+    }
+
+    &.bold.green {
+        color: #E3FFE9;
+    }
+
+    &.light {
+        color: #6B7280;
+    }
+
+    &.light.blue {
+        color: #1C51B9;
+    }
+
+    &.light.pink {
+        color: #C7369E;
+    }
+
+    &.light.green {
+        color: #3C8C4E;
+    }
+}
+
+
+
+

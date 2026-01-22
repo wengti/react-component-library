@@ -5,9 +5,10 @@ import { FaCircleInfo } from "react-icons/fa6";
 import { createContext } from 'react'
 import { createPortal } from 'react-dom'
 
+
 export const BannerContext = createContext()
 
-export default function Banner({ children, variant = "neutral", role = "", position ="", addToToasts}) {
+export default function Banner({ children, variant = "neutral", role = "", position ="", toast=""}) {
 
     let bannerIcon
     switch (variant) {
@@ -32,7 +33,7 @@ export default function Banner({ children, variant = "neutral", role = "", posit
             className={`banner ${variant} ${role} ${position}`}
             ref= { 
                 role === 'toast'
-                ? (node) => {return addToToasts(node, variant)}
+                ? toast
                 : null
             }
         >

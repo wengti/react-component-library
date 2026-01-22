@@ -4,32 +4,9 @@ import Banner from './components/banner/index'
 import Card from './components/card/index'
 import Testimonial from './components/testimonial/Testimonial'
 import Tooltip from './components/tooltip/index'
+import ToastBtn from './components/banner/ToastBtn'
 
 export default function App() {
-
-    const toasts = React.useRef(null)
-
-    function addToToasts(node, name) {
-        if (toasts.current === null) {
-            toasts.current = {}
-        }
-        toasts.current[name] = node
-
-        return (() => { delete (toasts.current.name) })
-    }
-
-    function showToast(event, type) {
-        toasts.current[type].style.display = "block"
-        toasts.current[type].style.opacity = 1
-
-        setTimeout(() => {
-            toasts.current[type].style.opacity = 0
-        }, 2000)
-
-        setTimeout(() => {
-            toasts.current[type].style.display = "none"
-        }, 2500)
-    }
 
 
     return (
@@ -191,7 +168,7 @@ export default function App() {
             {/* ------- */}
             {/* Tooltip */}
             {/* ------- */}
-            <h2 className='title'>Tooltip</h2>
+            <h2 className='title'>TOOLTIP</h2>
             <div className='tooltip-container'>
                 <Tooltip>
                     <Tooltip.Title>
@@ -269,13 +246,55 @@ export default function App() {
             <h2 className='title'>TOASTS POPUPS</h2>
             <div className="toast-popups-container">
                 <div className='btn-containers'>
-                    <button className='success-btn' onClick={(event) => { showToast(event, "success") }}>Click me to show success</button>
+
+                    <ToastBtn
+                        variant='success'
+                        bannerRole="toast"
+                        position="top-left"
+                        toastTitle="Success"
+                        toastText="Your work has been saved"
+                    >
+                        Click me to show success
+                    </ToastBtn>
+
+                    <ToastBtn
+                        variant='warning'
+                        bannerRole="toast"
+                        position="top-right"
+                        toastTitle="Warning"
+                        toastText="A network error was detected"
+                    >
+                        Click me to show warning
+                    </ToastBtn>
+
+                    <ToastBtn
+                        variant='neutral'
+                        bannerRole="toast"
+                        position="bottom-left"
+                        toastTitle="Information"
+                        toastText="Please read updated information"
+                    >
+                        Click me to show neutral
+                    </ToastBtn>
+
+                    <ToastBtn
+                        variant='error'
+                        bannerRole="toast"
+                        position="bottom-right"
+                        toastTitle="Error"
+                        toastText="Please resave your work again"
+                    >
+                        Click me to show error
+                    </ToastBtn>
+
+
+                    {/* <button className='success-btn' onClick={(event) => { showToast(event, "success") }}>Click me to show success</button>
                     <button className='warning-btn' onClick={(event) => { showToast(event, "warning") }}>Click me to show warning</button>
                     <button className='neutral-btn' onClick={(event) => { showToast(event, "neutral") }}>Click me to show neutral</button>
-                    <button className='error-btn' onClick={(event) => { showToast(event, "error") }}>Click me to show error</button>
+                    <button className='error-btn' onClick={(event) => { showToast(event, "error") }}>Click me to show error</button> */}
                 </div>
 
-                <Banner
+                {/* <Banner
                     variant='success'
                     role="toast"
                     addToToasts={addToToasts}
@@ -329,7 +348,7 @@ export default function App() {
                     <Banner.Text>
                         Please resave your work again
                     </Banner.Text>
-                </Banner>
+                </Banner> */}
 
 
             </div>
